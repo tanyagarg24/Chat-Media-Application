@@ -35,19 +35,19 @@ public class ShowAllUsers extends AppCompatActivity {
     SearchView searchView;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_show_all_users);
+
+
         recyclerview=findViewById(R.id.user_recycler_view);
         recyclerview.setHasFixedSize(true);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         searchToolbar=findViewById(R.id.searchToolbar);
         setSupportActionBar(searchToolbar);
+
 
 
 
