@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="3dp"
+
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/profileuser"
+        android:src="@drawable/profile_image"
+        />
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:id="@+id/onlinestatususer"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="16dp"
+        android:id="@+id/namee"
+        android:layout_toEndOf="@+id/profileuser"
+        android:layout_marginStart="5dp"
+        android:layout_toRightOf="@+id/profileuser"
+        android:layout_marginLeft="5dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="last message"
+        android:maxLines="2"
+
+        android:id="@+id/lastmessage"
+        android:layout_below="@+id/namee"
+        android:layout_toEndOf="@+id/profileuser"
+        android:layout_marginStart="5dp"
+        android:layout_toRightOf="@+id/profileuser"
+        android:layout_marginLeft="5dp" />
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

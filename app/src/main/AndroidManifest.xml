@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ChatActivity" />
-        <activity android:name=".ShowAllUsers" /> <!-- <activity -->
+        <activity android:name=".ShowAllUsers"/>
+        <!-- <activity -->
         <!-- android:name=".SearchUserActivityaaa" -->
         <!-- android:parentActivityName=".MainActivity" /> -->
         <activity android:name=".MypostsActivity" />

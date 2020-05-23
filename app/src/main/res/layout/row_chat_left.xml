@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
+    android:id="@+id/messageLayoutshow"
     >
 
     <LinearLayout
@@ -11,12 +12,12 @@
     android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/profileimageview"
-            android:src="@drawable/profile_image"
-            />
+<!--        <com.mikhaellopez.circularimageview.CircularImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:id="@+id/profileimageview"-->
+<!--            android:src="@drawable/profile_image"-->
+<!--            />-->
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/messagetv"

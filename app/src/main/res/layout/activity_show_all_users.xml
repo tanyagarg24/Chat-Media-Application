@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShowAllUsers"
+
     >
 
 
@@ -27,7 +28,6 @@
         android:id="@+id/user_recycler_view"
         android:layout_marginTop="85dp"
         >
-
 
     </androidx.recyclerview.widget.RecyclerView>
 

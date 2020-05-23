@@ -134,15 +134,15 @@ public class ChatActivity extends AppCompatActivity {
     }
     private void readMessage() {
         chatList=new ArrayList<>();
-        Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
+
 
         DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Chats");
-        Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
-                Log.i("error404","3");
+
 
 
                     chatList.clear();
@@ -172,7 +172,37 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        final DatabaseReference chatlistref1=FirebaseDatabase.getInstance().getReference("Chatlist")
+                .child("myUid").child("hisUid");
+        chatlistref1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()){
+                    chatlistref1.child("id").setValue(hisUid);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        final DatabaseReference chatlistref2=FirebaseDatabase.getInstance().getReference("Chatlist")
+                .child("hisUid").child("myUid");
+        chatlistref2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()){
+                    chatlistref2.child("id").setValue(myUid);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
     }

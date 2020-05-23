@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
@@ -31,6 +32,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 
 //import android.widget.Toolbar;
 
@@ -56,15 +61,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         auth=FirebaseAuth.getInstance();
-
         currentuser=auth.getCurrentUser();
+
         databaseReference= FirebaseDatabase.getInstance().getReference();
-        currentuid=auth.getCurrentUser().getUid();
+//        currentuid=auth.getCurrentUser().getUid();
+
         mypostsref= FirebaseStorage.getInstance().getReference().child("My posts");
+        String postid=databaseReference.push().getKey();
+        HashMap <String ,Object> hashMap=new HashMap<>();
 
         toolbar=findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Chat App");
+        getSupportActionBar().setTitle("Application");
         viewPager=findViewById(R.id.main_pager);
         tabsAcessAdapter=new TabsAcessAdapter(getSupportFragmentManager());
         viewPager.setAdapter(tabsAcessAdapter);
@@ -86,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
     private void VerifyUserExistance() {
         String currentuid=auth.getCurrentUser().getUid();
@@ -117,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(loginIntent);
         finish();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -208,4 +218,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
+
+
+
+
+
+    
 }

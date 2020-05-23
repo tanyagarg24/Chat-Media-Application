@@ -1,16 +1,18 @@
 package com.example.chatapp.models;
 
 public class ModelUsers {
-    String name,image,about,uid;
+    String name,image,about,uid,onlineStatus,typingTo;
 
     public ModelUsers() {
     }
 
-    public ModelUsers(String name, String image, String about, String uid) {
+    public ModelUsers(String name, String image, String about, String uid, String onlineStatus, String typingTo) {
         this.name = name;
         this.image = image;
         this.about = about;
         this.uid = uid;
+        this.onlineStatus = onlineStatus;
+        this.typingTo = typingTo;
     }
 
     public String getName() {
@@ -43,5 +45,21 @@ public class ModelUsers {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getOnlineStatus() {
+        return onlineStatus;
+    }
+
+    public void setOnlineStatus(String onlineStatus) {
+        this.onlineStatus = onlineStatus;
+    }
+
+    public String getTypingTo() {
+        return typingTo;
+    }
+
+    public void setTypingTo(String typingTo) {
+        this.typingTo = typingTo;
     }
 }
